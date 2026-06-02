@@ -81,11 +81,15 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "description", content: "Especialistas en repuestos originales y alternativos para vehículos Mitsubishi en Puerto Ordaz, Estado Bolívar, Venezuela. Lancer, Montero, Outlander y más." },
       { name: "keywords", content: "repuestos mitsubishi puerto ordaz, autopartes mitsubishi venezuela, repuestos originales mitsubishi, repuestos mitsubishi guayana, mitsubishi puerto ordaz, repuestos lancer, repuestos montero, repuestos outlander" },
       { name: "author", content: "MITSUJAS GUAYANA C.A" },
-      { property: "og:title", content: "MITSUJAS GUAYANA — Repuestos Mitsubishi" },
-      { property: "og:description", content: "Especialistas en repuestos originales y alternativos para vehículos Mitsubishi en Puerto Ordaz." },
+      { property: "og:title", content: "MITSUJAS GUAYANA — Repuestos Mitsubishi en Puerto Ordaz" },
+      { property: "og:description", content: "Especialistas en repuestos originales y alternativos para vehículos Mitsubishi en Puerto Ordaz, Estado Bolívar, Venezuela. Lancer, Montero, Outlander y más." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@MitsujasGuayana" },
+      { name: "twitter:title", content: "MITSUJAS GUAYANA — Repuestos Mitsubishi en Puerto Ordaz" },
+      { name: "twitter:description", content: "Especialistas en repuestos originales y alternativos para vehículos Mitsubishi en Puerto Ordaz, Estado Bolívar, Venezuela. Lancer, Montero, Outlander y más." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/a88a0342-e156-4b49-8f3d-840c70030445/id-preview-61094ae3--cb35b40d-e3a7-497d-b4b2-06dbef17e213.lovable.app-1780407631577.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/a88a0342-e156-4b49-8f3d-840c70030445/id-preview-61094ae3--cb35b40d-e3a7-497d-b4b2-06dbef17e213.lovable.app-1780407631577.png" },
     ],
     links: [
       {
