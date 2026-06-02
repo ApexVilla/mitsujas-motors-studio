@@ -62,26 +62,49 @@
 }
 
 :root {
-  --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.129 0.042 264.695);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.129 0.042 264.695);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.129 0.042 264.695);
-  --primary: oklch(0.208 0.042 265.755);
-  --primary-foreground: oklch(0.984 0.003 247.858);
-  --secondary: oklch(0.968 0.007 247.896);
-  --secondary-foreground: oklch(0.208 0.042 265.755);
-  --muted: oklch(0.968 0.007 247.896);
-  --muted-foreground: oklch(0.554 0.046 257.417);
-  --accent: oklch(0.968 0.007 247.896);
-  --accent-foreground: oklch(0.208 0.042 265.755);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(0.929 0.013 255.508);
-  --input: oklch(0.929 0.013 255.508);
-  --ring: oklch(0.704 0.04 256.788);
+  --radius: 0.5rem;
+  /* MITSUJAS GUAYANA — Dark automotive premium palette */
+  --background: oklch(0.14 0.005 240);          /* deep graphite black */
+  --foreground: oklch(0.97 0 0);
+  --card: oklch(0.18 0.005 240);
+  --card-foreground: oklch(0.97 0 0);
+  --popover: oklch(0.16 0.005 240);
+  --popover-foreground: oklch(0.97 0 0);
+  --primary: oklch(0.58 0.24 27);               /* Mitsubishi red */
+  --primary-foreground: oklch(0.98 0 0);
+  --secondary: oklch(0.24 0.005 240);
+  --secondary-foreground: oklch(0.97 0 0);
+  --muted: oklch(0.22 0.005 240);
+  --muted-foreground: oklch(0.68 0.01 240);
+  --accent: oklch(0.6 0.24 27);
+  --accent-foreground: oklch(0.98 0 0);
+  --destructive: oklch(0.6 0.245 27.325);
+  --destructive-foreground: oklch(0.98 0 0);
+  --border: oklch(0.28 0.005 240 / 0.6);
+  --input: oklch(0.24 0.005 240);
+  --ring: oklch(0.58 0.24 27);
+
+  /* Brand-specific tokens */
+  --brand-red: oklch(0.58 0.24 27);
+  --brand-red-glow: oklch(0.65 0.27 25);
+  --brand-red-deep: oklch(0.42 0.22 28);
+  --metal-light: oklch(0.78 0.01 240);
+  --metal: oklch(0.55 0.008 240);
+  --metal-dark: oklch(0.32 0.005 240);
+  --graphite: oklch(0.14 0.005 240);
+  --graphite-soft: oklch(0.18 0.005 240);
+
+  --gradient-hero: radial-gradient(ellipse at 50% 50%, oklch(0.58 0.24 27 / 0.18), transparent 60%);
+  --gradient-red: linear-gradient(135deg, oklch(0.58 0.24 27), oklch(0.42 0.22 28));
+  --gradient-metal: linear-gradient(180deg, oklch(0.32 0.005 240), oklch(0.14 0.005 240));
+  --gradient-text: linear-gradient(180deg, oklch(0.98 0 0), oklch(0.7 0.01 240));
+
+  --shadow-red: 0 20px 60px -20px oklch(0.58 0.24 27 / 0.5);
+  --shadow-glass: 0 8px 32px 0 oklch(0 0 0 / 0.5);
+  --shadow-card: 0 30px 60px -30px oklch(0 0 0 / 0.8);
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
