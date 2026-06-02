@@ -169,5 +169,4 @@ export const products: Product[] = [
 
 export const allCategories = ["Todos", "Frenos", "Motor", "Filtros", "Suspensión", "Eléctrico", "Transmisión"] as const;
 export const allModels = ["Todos", "Lancer", "Lancer Evo", "Outlander", "Montero", "ASX", "L200", "Mirage", "Eclipse"] as const;
-export const allYears = ["Todos", "2024", "2020", "2015", "2010", "2005"] as const;
 export const allTypes = ["Todos", "Original", "Alternativo"] as const;
