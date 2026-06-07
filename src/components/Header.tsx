@@ -1,12 +1,15 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, MessageCircle } from "lucide-react";
+import { Menu, X } from "lucide-react";
+import { useMagnetic } from "@/hooks/useMagnetic";
+import LogoImage from "@/assets/logo.png";
+import { WhatsAppIcon } from "@/components/SocialIcons";
 
 const links = [
   { href: "#inicio", label: "Inicio" },
   { href: "#nosotros", label: "Nosotros" },
   { href: "#catalogo", label: "Catálogo" },
-  { href: "#marcas", label: "Marcas" },
+  { href: "#marcas", label: "Modelos" },
   { href: "#contacto", label: "Contacto" },
 ];
 
@@ -14,6 +17,8 @@ const WHATSAPP = "https://wa.me/584264054560?text=Hola%20MITSUJAS%20GUAYANA";
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
+  const logoRef = useMagnetic<HTMLAnchorElement>(0.2, 40);
+  const waRef = useMagnetic<HTMLAnchorElement>(0.3, 50);
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
@@ -34,16 +39,18 @@ export function Header() {
     >
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
         <div className="flex h-20 items-center justify-between">
-          <a href="#inicio" className="group flex items-center gap-3">
-            <div className="flex h-9 w-9 items-center justify-center">
-              <div className="relative h-7 w-7">
-                <div className="absolute inset-0 rotate-45 bg-[var(--brand-red)]" style={{ clipPath: "polygon(50% 0, 100% 50%, 50% 100%, 0 50%)" }} />
-                <div className="absolute inset-1.5 rotate-45 bg-background" style={{ clipPath: "polygon(50% 0, 100% 50%, 50% 100%, 0 50%)" }} />
-              </div>
-            </div>
-            <div className="font-display text-[15px] font-bold leading-none tracking-[0.18em] text-foreground">
-              MITSUJAS
-              <div className="mt-1 text-[10px] font-medium tracking-[0.3em] text-muted-foreground">GUAYANA</div>
+          <a ref={logoRef} href="#inicio" className="group flex items-center">
+            <div className="overflow-hidden transition-all duration-300 group-hover:opacity-80" style={{height:'80px', width:'320px', display:'flex', alignItems:'center', justifyContent:'center'}}>
+              <img
+                src={LogoImage}
+                alt="MITSUJAS GUAYANA"
+                style={{
+                  width:'100%',
+                  height:'100%',
+                  objectFit:'contain',
+                  transform: 'scale(1.95)',
+                }}
+              />
             </div>
           </a>
 
@@ -62,12 +69,13 @@ export function Header() {
 
           <div className="hidden lg:block">
             <a
+              ref={waRef}
               href={WHATSAPP}
               target="_blank"
               rel="noreferrer"
-              className="group inline-flex items-center gap-2 rounded-full bg-[var(--gradient-red)] px-5 py-2.5 text-sm font-semibold text-white shadow-[var(--shadow-red)] transition-all duration-300 hover:scale-[1.03]"
+              className="group inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#25D366] to-[#128C7E] px-5 py-2.5 text-sm font-semibold text-white shadow-[0_8px_20px_-6px_rgba(37,211,102,0.5)] transition-all duration-300 hover:scale-[1.03] hover:brightness-110"
             >
-              <MessageCircle className="h-4 w-4" strokeWidth={2.4} />
+              <WhatsAppIcon className="h-4 w-4 fill-current" />
               WhatsApp
             </a>
           </div>
@@ -106,9 +114,9 @@ export function Header() {
                 href={WHATSAPP}
                 target="_blank"
                 rel="noreferrer"
-                className="mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-[var(--gradient-red)] px-5 py-3 text-sm font-semibold text-white"
+                className="mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#25D366] to-[#128C7E] px-5 py-3 text-sm font-semibold text-white shadow-[0_4px_12px_rgba(37,211,102,0.3)]"
               >
-                <MessageCircle className="h-4 w-4" /> WhatsApp
+                <WhatsAppIcon className="h-4 w-4 fill-current" /> WhatsApp
               </a>
             </nav>
           </motion.div>

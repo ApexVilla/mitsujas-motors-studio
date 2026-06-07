@@ -238,4 +238,76 @@
   ::-webkit-scrollbar-track { background: oklch(0.12 0.005 240); }
   ::-webkit-scrollbar-thumb { background: oklch(0.3 0.005 240); border-radius: 6px; }
   ::-webkit-scrollbar-thumb:hover { background: var(--brand-red); }
+
+  /* Spotlight Card Glow Borders */
+  .spotlight-card {
+    position: relative;
+    border: 1px solid oklch(0.28 0.005 240 / 0.3) !important;
+    overflow: hidden;
+  }
+  .spotlight-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    border-radius: inherit;
+    background: radial-gradient(
+      280px circle at var(--mouse-x, 0px) var(--mouse-y, 0px),
+      oklch(0.58 0.24 27 / 0.12),
+      transparent 80%
+    );
+    opacity: 0;
+    transition: opacity 0.35s ease;
+    z-index: 1;
+  }
+  .spotlight-card::after {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    pointer-events: none;
+    border-radius: inherit;
+    background: radial-gradient(
+      180px circle at var(--mouse-x, 0px) var(--mouse-y, 0px),
+      oklch(0.58 0.24 27 / 0.5),
+      transparent 80%
+    );
+    opacity: 0;
+    transition: opacity 0.35s ease;
+    z-index: 0;
+  }
+  .spotlight-card:hover::before,
+  .spotlight-card:hover::after {
+    opacity: 1;
+  }
+  /* GPU acceleration helper */
+  .optimize-gpu {
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+    will-change: transform, opacity;
+  }
+
+  /* CSS Particles (Hardware accelerated) */
+  @keyframes float-particle {
+    0%, 100% { transform: translateY(0) translate3d(0,0,0); opacity: 0.2; }
+    50% { transform: translateY(-40px) translate3d(0,0,0); opacity: 0.8; }
+  }
+  .particle-css {
+    animation: float-particle var(--p-duration, 5s) ease-in-out infinite;
+    animation-delay: var(--p-delay, 0s);
+    will-change: transform, opacity;
+  }
+
+  /* Scroll performance layer stabilization */
+  .catalog-header,
+  .catalog-vehicles,
+  .catalog-filter-card,
+  .about-left,
+  .about-right-fade,
+  .spotlight-card,
+  .benefits-card,
+  .gallery-item {
+    will-change: transform, opacity;
+  }
 }
+

@@ -1,4 +1,5 @@
-import { Instagram, MessageCircle } from "lucide-react";
+import LogoImage from "@/assets/logo.png";
+import { WhatsAppIcon, InstagramIcon, TikTokIcon, FacebookIcon } from "@/components/SocialIcons";
 
 const links = [
   { href: "#inicio", label: "Inicio" },
@@ -15,23 +16,62 @@ export function Footer() {
       <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
         <div className="grid gap-12 lg:grid-cols-4">
           <div className="lg:col-span-2">
-            <div className="flex items-center gap-3">
-              <div className="relative h-8 w-8">
-                <div className="absolute inset-0 rotate-45 bg-[var(--brand-red)]" style={{ clipPath: "polygon(50% 0, 100% 50%, 50% 100%, 0 50%)" }} />
-                <div className="absolute inset-1.5 rotate-45 bg-background" style={{ clipPath: "polygon(50% 0, 100% 50%, 50% 100%, 0 50%)" }} />
+            <div className="mb-4">
+              <div className="overflow-hidden" style={{height:'72px', width:'320px', display:'flex', alignItems:'center', justifyContent:'start'}}>
+                <img
+                  src={LogoImage}
+                  alt="MITSUJAS GUAYANA"
+                  style={{
+                    width:'100%',
+                    height:'100%',
+                    objectFit:'contain',
+                    transform: 'scale(1.95)',
+                    transformOrigin: 'left center'
+                  }}
+                />
               </div>
-              <div>
-                <div className="font-display text-base font-bold tracking-[0.18em] text-foreground">MITSUJAS GUAYANA</div>
-                <div className="font-mono text-[10px] tracking-[0.2em] text-muted-foreground">RIF · J-409236005</div>
-              </div>
+              <div className="mt-2 font-mono text-[10px] tracking-[0.2em] text-muted-foreground">RIF · J-505419978</div>
             </div>
             <p className="mt-6 max-w-md text-sm leading-relaxed text-muted-foreground">
               Venta de autopartes y repuestos originales y alternativos para vehículos Mitsubishi en Puerto Ordaz, Estado Bolívar, Venezuela.
             </p>
             <div className="mt-6 flex gap-3">
-              <a href="https://wa.me/584264054560" target="_blank" rel="noreferrer" aria-label="WhatsApp" className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-border text-foreground transition-all hover:border-[var(--brand-red)] hover:text-[var(--brand-red)]"><MessageCircle className="h-4 w-4" /></a>
-              <a href="https://instagram.com/mitsujasguayana" target="_blank" rel="noreferrer" aria-label="Instagram" className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-border text-foreground transition-all hover:border-[var(--brand-red)] hover:text-[var(--brand-red)]"><Instagram className="h-4 w-4" /></a>
-              <a href="https://tiktok.com/@mitsujas.guayana" target="_blank" rel="noreferrer" className="inline-flex h-11 items-center justify-center rounded-full border border-border px-4 font-mono text-[11px] uppercase tracking-wider text-foreground transition-all hover:border-[var(--brand-red)] hover:text-[var(--brand-red)]">TikTok</a>
+              <a
+                href="https://wa.me/584264054560"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="WhatsApp"
+                className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-border text-foreground transition-all hover:border-[#25D366] hover:bg-[#25D366]/10 hover:text-[#25D366] hover:scale-105"
+              >
+                <WhatsAppIcon className="h-4 w-4 fill-current" />
+              </a>
+              <a
+                href="https://instagram.com/mitsujasguayana"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Instagram"
+                className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-border text-foreground transition-all hover:border-[#ee2a7b] hover:bg-[#ee2a7b]/10 hover:text-[#ee2a7b] hover:scale-105"
+              >
+                <InstagramIcon className="h-4 w-4 stroke-current" />
+              </a>
+              <a
+                href="https://tiktok.com/@mitsujas.guayana"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="TikTok"
+                className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-border text-foreground transition-all hover:border-white hover:bg-white/10 hover:text-white hover:scale-105"
+              >
+                <TikTokIcon className="h-4 w-4 fill-current" />
+              </a>
+              <a
+                href="https://facebook.com/mitsujasguayana"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Facebook"
+                className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-border text-foreground transition-all hover:border-[#1877F2] hover:bg-[#1877F2]/10 hover:text-[#1877F2] hover:scale-105"
+              >
+                <FacebookIcon className="h-4 w-4 fill-current" />
+              </a>
             </div>
           </div>
           <div>

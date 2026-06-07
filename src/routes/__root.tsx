@@ -11,6 +11,9 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import { CustomCursor } from "@/components/ui/CustomCursor";
+import { CanvasNeuralNet } from "@/components/ui/CanvasNeuralNet";
+
 
 function NotFoundComponent() {
   return (
@@ -77,21 +80,29 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "MITSUJAS GUAYANA — Repuestos Mitsubishi en Puerto Ordaz" },
-      { name: "description", content: "Especialistas en repuestos originales y alternativos para vehículos Mitsubishi en Puerto Ordaz, Estado Bolívar, Venezuela. Lancer, Montero, Outlander y más." },
-      { name: "keywords", content: "repuestos mitsubishi puerto ordaz, autopartes mitsubishi venezuela, repuestos originales mitsubishi, repuestos mitsubishi guayana, mitsubishi puerto ordaz, repuestos lancer, repuestos montero, repuestos outlander" },
+      { title: "MITSUJAS GUAYANA — Repuestos Mitsubishi en Puerto Ordaz, Venezuela" },
+      { name: "description", content: "Especialistas en repuestos originales y alternativos para Mitsubishi en Puerto Ordaz, Estado Bolívar. Lancer, Montero, Outlander, L200, ASX. Stock permanente y envíos a toda Venezuela. ¡Consulta por WhatsApp!" },
+      { name: "keywords", content: "repuestos mitsubishi puerto ordaz, autopartes mitsubishi venezuela, repuestos originales mitsubishi, repuestos mitsubishi guayana, mitsubishi puerto ordaz, repuestos lancer, repuestos montero, repuestos outlander, repuestos L200, mitsujas guayana, autoparte venezuela, repuesto mitsubishi barquisimeto, repuesto mitsubishi caracas" },
       { name: "author", content: "MITSUJAS GUAYANA C.A" },
+      { name: "robots", content: "index, follow" },
+      { name: "geo.region", content: "VE-F" },
+      { name: "geo.placename", content: "Puerto Ordaz, Estado Bolívar, Venezuela" },
+      { name: "geo.position", content: "8.3050;-62.7100" },
+      { name: "ICBM", content: "8.3050, -62.7100" },
       { property: "og:title", content: "MITSUJAS GUAYANA — Repuestos Mitsubishi en Puerto Ordaz" },
-      { property: "og:description", content: "Especialistas en repuestos originales y alternativos para vehículos Mitsubishi en Puerto Ordaz, Estado Bolívar, Venezuela. Lancer, Montero, Outlander y más." },
+      { property: "og:description", content: "Especialistas en repuestos originales y alternativos para Mitsubishi en Puerto Ordaz, Estado Bolívar, Venezuela. Lancer, Montero, Outlander, L200 y más." },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
+      { property: "og:locale", content: "es_VE" },
+      { property: "og:site_name", content: "MITSUJAS GUAYANA" },
+      { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:site", content: "@MitsujasGuayana" },
       { name: "twitter:title", content: "MITSUJAS GUAYANA — Repuestos Mitsubishi en Puerto Ordaz" },
-      { name: "twitter:description", content: "Especialistas en repuestos originales y alternativos para vehículos Mitsubishi en Puerto Ordaz, Estado Bolívar, Venezuela. Lancer, Montero, Outlander y más." },
+      { name: "twitter:description", content: "Especialistas en repuestos originales y alternativos para Mitsubishi en Puerto Ordaz, Venezuela." },
       { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/a88a0342-e156-4b49-8f3d-840c70030445/id-preview-61094ae3--cb35b40d-e3a7-497d-b4b2-06dbef17e213.lovable.app-1780407631577.png" },
       { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/a88a0342-e156-4b49-8f3d-840c70030445/id-preview-61094ae3--cb35b40d-e3a7-497d-b4b2-06dbef17e213.lovable.app-1780407631577.png" },
     ],
     links: [
+      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
       {
         rel: "stylesheet",
         href: appCss,
@@ -108,10 +119,49 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 });
 
 function RootShell({ children }: { children: ReactNode }) {
+  const schemaOrg = {
+    "@context": "https://schema.org",
+    "@type": ["LocalBusiness", "AutoPartsStore"],
+    "name": "MITSUJAS GUAYANA C.A",
+    "description": "Especialistas en repuestos originales y alternativos para vehículos Mitsubishi en Puerto Ordaz, Estado Bolívar, Venezuela.",
+    "url": "https://mitsujasguayana.com",
+    "telephone": ["+58-426-4054560", "+58-424-9344776"],
+    "email": "mitsujasguayana@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "CC Tirado, Local 1 y 2, Unare 1",
+      "addressLocality": "Puerto Ordaz",
+      "addressRegion": "Estado Bolívar",
+      "postalCode": "8050",
+      "addressCountry": "VE"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 8.305,
+      "longitude": -62.71
+    },
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "08:00", "closes": "18:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "08:00", "closes": "14:00" }
+    ],
+    "sameAs": [
+      "https://instagram.com/mitsujasguayana",
+      "https://facebook.com/mitsujasguayana",
+      "https://wa.me/584264054560"
+    ],
+    "priceRange": "$$",
+    "servesCuisine": null,
+    "currenciesAccepted": "VES, USD"
+  };
+
   return (
-    <html lang="en">
+    <html lang="es">
       <head>
         <HeadContent />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaOrg) }}
+        />
       </head>
       <body>
         {children}
@@ -126,6 +176,8 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
+      <CustomCursor />
+      <CanvasNeuralNet />
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
       <Outlet />
     </QueryClientProvider>
